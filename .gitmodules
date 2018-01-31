@@ -1,0 +1,3 @@
+[submodule "openmct-tutorial"]
+	path = openmct-tutorial
+	url = https://github.com/thesamprice/openmct-tutorial.git
