@@ -22,6 +22,7 @@ from time import sleep
 
 arg_parser = argparse.ArgumentParser(description='python based telemetry and command streamer.')
 arg_parser.add_argument('--ProjectDir',  default='proj_example',type=str, help='Project folder to pull configuration data from')
+arg_parser.add_argument('--NoTlmOut',  action="store_true", help='Disables output telemetry')
 args = arg_parser.parse_args()
 
 app = Flask(__name__)
@@ -115,7 +116,7 @@ driver.loadMessages()
 # Generate the telemetry database for OpenMCT if no database exists
 import tlm_dictonary
 json_tlm_file = app.config['user_dir'] + '/tlm_db/tlm.json'
-if not os.path.exists(json_tlm_file):
+if 1: ##not os.path.exists(json_tlm_file):
     with open(app.config['user_dir'] + '/tlm_db/tlm.json','w') as fp:
         tlm_db = tlm_dictonary.GetOpenMCTTlmDict(driver.tlms)
         json.dump(tlm_db,fp)
@@ -157,10 +158,10 @@ def background_thread():
 
 
 
-
-thread = Thread(target=background_thread)
-thread.daemon = True
-thread.start()    
+if args.NoTlmOut == False:
+    thread = Thread(target=background_thread)
+    thread.daemon = True
+    thread.start()    
 if __name__ == "__main__":
     print '*'*20 + "Started thread"
     app.run(debug=True,threaded=True)

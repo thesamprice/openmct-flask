@@ -9,8 +9,10 @@ def GetTlmPackets(module):
     return packets
 
 def GetOpenMCTTlmDict(module):
-    output = {'name':'TLM_db', 
-              'key':'TLM_db'}
+    
+    top_folder = 'TLM_db'
+    output = {'name':top_folder, 
+              'key':top_folder}
     typ_dict = {long:'integer',
                 int:'integer',
                 float:'float',
@@ -19,9 +21,23 @@ def GetOpenMCTTlmDict(module):
     pkt = packets[0]
     meas = []
     for pkt in packets:
+        location = 'example.taxonomy:spacecraft' + '.' + pkt[0]
+
+        loc =   {'key':location,
+                 'name': pkt[0],
+                 'type': 'folder',
+                 'location': top_folder,
+                 'children':[],
+                };      
+        print pkt[0] 
+        meas.append(loc)
         for f in CType_FlatNames(pkt[1]):
+            
             m = {'key':f[0],
                  'name':f[0],
+                 'location':location,
+                 'type':'example.telemetry',
+                 'children':[],
                  'values':[
                      {'units':'None',
                      'key':'value',
@@ -37,8 +53,9 @@ def GetOpenMCTTlmDict(module):
                         "format": "utc"
                         }
                  ]}
-            meas.append(m)
-    output['measurements'] = meas
+            loc['children'].append(m)
+#            meas.append(m)
+    output['children'] = meas
     return output
 def CType_FlatNames(struct,started=False,name=""):
 
