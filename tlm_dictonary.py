@@ -23,7 +23,7 @@ def GetOpenMCTTlmDict(module):
     for pkt in packets:
         location = 'example.taxonomy:spacecraft' + '.' + pkt[0]
 
-        loc =   {'key':location,
+        loc =   {'key':pkt[0],
                  'name': pkt[0],
                  'type': 'folder',
                  'location': top_folder,
@@ -32,10 +32,10 @@ def GetOpenMCTTlmDict(module):
         print pkt[0] 
         meas.append(loc)
         for f in CType_FlatNames(pkt[1]):
-            
+            print f
             m = {'key':f[0],
                  'name':f[0],
-                 'location':location,
+                 'location':pkt[0],
                  'type':'example.telemetry',
                  'children':[],
                  'values':[
@@ -60,8 +60,10 @@ def GetOpenMCTTlmDict(module):
 def CType_FlatNames(struct,started=False,name=""):
 
     if started:
-        name += '.'
-    name += struct.__class__.__name__
+        pass
+#        name += '.'
+    else:
+        name += struct.__class__.__name__
 
     def get_value(name, value):
          if (type(value) not in [int, long, float, bool,str]) and not bool(value):
