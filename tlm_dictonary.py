@@ -39,19 +39,26 @@ def GetOpenMCTTlmDict(module):
                  'type':'example.telemetry',
                  'children':[],
                  'values':[
-                     {'units':'None',
-                     'key':'value',
-                     'name':'Value',
-                     'format':typ_dict[f[1]]},
-                         {
+                    {
+                        'key':'value',
+                        'name':'Value',
+                        'units':'None',
+                        # 'min':-1000,
+                        # 'max':1000,
+                        'format':typ_dict[f[1]],
+                        "hints": {
+                            "range": 1
+                        }
+                    },
+                    {
+                        "key": "utc",
                         "source": "timestamp",
+                        "name": "Timestamp",
+                        "format": "utc",
                         "hints": {
                             "domain": 1
-                        },
-                        "name": "Timestamp",
-                        "key": "utc",
-                        "format": "utc"
                         }
+                    }
                  ]}
             loc['children'].append(m)
 #            meas.append(m)
