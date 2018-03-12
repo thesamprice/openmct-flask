@@ -1,3 +1,5 @@
+pip install flask
+
 python virtualenv.py flask
 flask/bin/pip install setuptools --no-use-wheel --upgrade
 flask/bin/pip install flask
@@ -13,3 +15,7 @@ flask/bin/pip install flask
 #flask/bin/pip install flask-babel==0.8
 #flask/bin/pip install flup
 git submodule update --recursive --init
+pip install flask_socketio
+pip install flask_restful
+pip install flask_bower
+pip install flask_caching
