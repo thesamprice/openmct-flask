@@ -23,6 +23,8 @@ from time import sleep
 arg_parser = argparse.ArgumentParser(description='python based telemetry and command streamer.',add_help=False)
 arg_parser.add_argument('--ProjectDir',  default='proj_example',type=str, help='Project folder to pull configuration data from')
 arg_parser.add_argument('--NoTlmOut',  action="store_true", help='Disables output telemetry')
+arg_parser.add_argument('-v','--verbose',  action="store_true", help='Disables verbose output')
+arg_parser.add_argument('--regen_tlmdb',  action="store_true", help='Regenerates the telemetry database')
 #arg_parser.add_argument('--uart',    type=str,help='UART device to pull data from')
 #arg_parser.add_argument('-h', '--help',  action="store_true", help='Disables output telemetry')
 arg_parser.add_help = False
@@ -40,7 +42,7 @@ cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 Bower(app)
 CORS(app)
 api = Api(app)
-socketio = SocketIO(app,logger=True,engineio_logger=True) #async_mode=async_mode,
+socketio = SocketIO(app,logger=args.verbose,engineio_logger=args.verbose) #async_mode=async_mode,
 
 @app.route('/<path:path>')
 def static_file(path):
@@ -153,10 +155,10 @@ driver = Driver.Driver(args)
 # Generate the telemetry database for OpenMCT if no database exists
 import tlm_dictonary
 json_tlm_file = app.config['user_dir'] + '/tlm_db/tlm.json'
-if 1: ##not os.path.exists(json_tlm_file):
+if not os.path.exists(json_tlm_file) or args.regen_tlmdb:
     with open(app.config['user_dir'] + '/tlm_db/tlm.json','w') as fp:
         tlm_db = tlm_dictonary.GetOpenMCTTlmDict(driver.tlms)
-        json.dump(tlm_db,fp)
+        json.dump(tlm_db,fp,indent=1)
     print "Tlm DB created from python rdls"
 
 running = False
@@ -174,7 +176,7 @@ def background_thread():
     print 'Grabbing packets'
     while running:
         for z in driver.GetPacket():
-            print 'Got packet'
+            #print 'Got packet'
             if z== None:
                 print "packet None"
                 continue
@@ -186,8 +188,8 @@ def background_thread():
                     'name':z['name'],
                     'time':z['time'],
                     'obj':obj}
-
-            print count, out['name']
+            if args.verbose:
+                print count, out['name']
             socketio.emit( 'TLM', #'stream',
                             out,
                         namespace='/' , #+ out['name'],
@@ -201,4 +203,4 @@ if args.NoTlmOut == False:
     thread.start()    
 if __name__ == "__main__":
     print '*'*20 + "Started thread"
-    app.run(debug=True,threaded=True)
+    app.run(debug=False,threaded=True)

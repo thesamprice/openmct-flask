@@ -3,14 +3,19 @@ from time import sleep,time
 import random
 import ctypes
 import rdl.messages as module
+
+def AddArgs(p):
+    arg_parser.add_argument('--tlm_delay',  default=.1,type=str, help='Project folder to pull configuration data from')
+    return arg_parser
+
 class Driver(object):
     
     running = 1
-    def __init__(self):
+    def __init__(self,args):
         self.tlms =  type('tlmdb', (object,), {})
         self.messages = []
         self.loadMessages()
-
+        self.args = args
     def loadMessages(self):
 
         # Use the inspect module to find all of the structures in this module
