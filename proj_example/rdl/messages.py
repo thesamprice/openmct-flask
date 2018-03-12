@@ -144,7 +144,8 @@ class Example_M (my_endian):
                  ("temp_a"           , ctypes.c_float ),
                  ("temp_b"           , ctypes.c_int32 ),
                  ("temp_c"           , ctypes.c_int16 * 5 ),
-                 ("temp_d"           , ctypes.c_int8 )]
+                 ("temp_d"           , ctypes.c_int8 ),
+                 ("hello", ctypes.c_double)]
     def SetConstants(self):
         self.packet_header.Pri.StreamId.apid = 5
 

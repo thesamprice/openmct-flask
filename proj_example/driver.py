@@ -41,15 +41,15 @@ class Driver(object):
         """
         tlms = self.tlms
         while(self.running):
-            tlms.SPS_M.x += random.random() 
-            tlms.SPS_M.y += random.random() 
-            tlms.SPS_M.z += random.random() 
+            tlms.SPS_M.x += random.random() -.5
+            tlms.SPS_M.y += random.random() -.5
+            tlms.SPS_M.z += random.random() -.5
 
             yield {'time':time(),'name':'SPS_M', 'obj':tlms.SPS_M}
-            sleep(1)
+            sleep(.2)
 
-            tlms.Example_M.temp_a += int( random.random() * 10)
-            tlms.Example_M.temp_b += int(random.random() *10 )
-            tlms.Example_M.temp_c[0] += int(random.random() *10 )
+            tlms.Example_M.temp_a += int( random.random() * 10) -5
+            tlms.Example_M.temp_b += int(random.random() *10 ) -5
+            tlms.Example_M.temp_c[0] += int(random.random() *10 ) -5
             yield {'time':time(),'name':'Example_M', 'obj':tlms.Example_M}
-            sleep(1)
+            sleep(.2)

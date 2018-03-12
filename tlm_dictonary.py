@@ -38,6 +38,9 @@ def GetOpenMCTTlmDict(module):
                  'location':pkt[0],
                  'type':'example.telemetry',
                  'children':[],
+                 'properites':{
+                     'scale':1
+                 },
                  'values':[
                     {
                         'key':'value',
