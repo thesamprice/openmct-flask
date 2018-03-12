@@ -20,13 +20,16 @@ import datetime
 import time
 from time import sleep
 
-arg_parser = argparse.ArgumentParser(description='python based telemetry and command streamer.')
+arg_parser = argparse.ArgumentParser(description='python based telemetry and command streamer.',add_help=False)
 arg_parser.add_argument('--ProjectDir',  default='proj_example',type=str, help='Project folder to pull configuration data from')
 arg_parser.add_argument('--NoTlmOut',  action="store_true", help='Disables output telemetry')
-args = arg_parser.parse_args()
+#arg_parser.add_argument('--uart',    type=str,help='UART device to pull data from')
+#arg_parser.add_argument('-h', '--help',  action="store_true", help='Disables output telemetry')
+arg_parser.add_help = False
+args = arg_parser.parse_known_args()[0]
 
 app = Flask(__name__)
-app._static_folder = '/Users/sprice5/src/websites/openmct-tutorial'
+
 app._static_folder = os.path.dirname(sys.argv[0]) + './openmct-tutorial'
 app._static_folder = os.path.abspath(app._static_folder)
 app.config.update(user_dir=args.ProjectDir)
@@ -59,21 +62,42 @@ def db_telemetry():
     print "DB requested"
     return jsonify(out)
 
-@app.route('/saveData', methods=['POST'])
-def saveData():
-    print request
+@app.route('/pages/<path:path>', methods=['POST','PUT'])
+def saveData(path):
+    print request, path
     data = request.json
     print data
-    with open(app.config['user_dir'] + '/data/test.json','w') as fp:
-        json.dump(data,fp)
+    #TODO Securify path
+    full_path = app.config['user_dir'] + '/pages/' + path
+
+    if os.path.isdir(full_path):
+        pass
+
+    with open( full_path ,'w') as fp:
+        json.dump(data,fp,indent=1)
+
     return 'Success'
 
 
-@app.route('/getData')
-def getData():
-    with open(app.config['user_dir'] + '/data/test.json','r') as fp:
-        data = json.load(fp)
-    return jsonify(data)
+@app.route('/pages/<path:path>')
+def getData(path):
+        #TODO Securify path
+    full_path = app.config['user_dir'] + '/pages/' + path
+    print 'Request', full_path
+    if os.path.isdir(full_path):
+        data = {'type':'dir',
+         'name':path.split('/')[-1],
+         'children':os.listdir(full_path)}
+        return jsonify(data)
+    elif os.path.exists(full_path ):
+        with open( full_path ,'r') as fp:
+            data = json.load(fp)
+            return jsonify(data)
+
+
+@app.route('/pages')
+def getPagesRoot():
+    return getData('')
 
 
 async_mode = None
@@ -110,8 +134,21 @@ import importlib
 
 sys.path.insert(0,app.config['user_dir'])
 Driver = importlib.import_module('driver', 'driver')
-driver = Driver.Driver()
-driver.loadMessages()
+
+if hasattr(Driver, 'AddArgs'):
+    arg_parser = Driver.AddArgs(arg_parser)
+
+arg_parser.add_help = True
+
+arg_parser.add_argument(
+                '-h', '--help',
+                action='help', default=argparse.SUPPRESS,
+                help=argparse._('show this help message and exit'))
+
+args = arg_parser.parse_args()
+
+driver = Driver.Driver(args)
+
 
 # Generate the telemetry database for OpenMCT if no database exists
 import tlm_dictonary
