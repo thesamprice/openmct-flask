@@ -1,1 +1,1673 @@
-{"name": "TLM_db", "key": "TLM_db", "children": [{"children": [{"name": "Example_M.packet_header.Pri.StreamId.packet_version_number", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.Pri.StreamId.packet_version_number", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.Pri.StreamId.packet_type", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.Pri.StreamId.packet_type", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.Pri.StreamId.secondary_header_present", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.Pri.StreamId.secondary_header_present", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.Pri.StreamId.apid", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.Pri.StreamId.apid", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.Pri.Sequence.sequence_flags", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.Pri.Sequence.sequence_flags", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.Pri.Sequence.sequence_count", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.Pri.Sequence.sequence_count", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.Pri.Length", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.Pri.Length", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[0]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[0]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[1]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[1]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[2]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[2]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[3]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[3]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[4]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[4]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[5]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[5]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[6]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[6]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.packet_header.s_time[7]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.packet_header.s_time[7]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.time_ws.week_hw", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.time_ws.week_hw", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.time_ws.sec_hw", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.time_ws.sec_hw", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.time_sub", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.time_sub", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_a", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_a", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_b", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_b", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_c[0]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_c[0]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_c[1]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_c[1]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_c[2]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_c[2]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_c[3]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_c[3]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_c[4]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_c[4]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.temp_d", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.temp_d", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "Example_M.hello", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "Example_M", "key": "Example_M.hello", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}], "type": "folder", "name": "Example_M", "key": "Example_M", "location": "TLM_db"}, {"children": [{"name": "SPS_M.packet_header.Pri.StreamId.packet_version_number", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.Pri.StreamId.packet_version_number", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.Pri.StreamId.packet_type", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.Pri.StreamId.packet_type", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.Pri.StreamId.secondary_header_present", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.Pri.StreamId.secondary_header_present", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.Pri.StreamId.apid", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.Pri.StreamId.apid", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.Pri.Sequence.sequence_flags", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.Pri.Sequence.sequence_flags", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.Pri.Sequence.sequence_count", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.Pri.Sequence.sequence_count", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.Pri.Length", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.Pri.Length", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[0]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[0]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[1]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[1]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[2]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[2]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[3]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[3]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[4]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[4]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[5]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[5]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[6]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[6]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.packet_header.s_time[7]", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.packet_header.s_time[7]", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.time_ws.week_hw", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.time_ws.week_hw", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.time_ws.sec_hw", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.time_ws.sec_hw", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.time_sub", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "integer"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.time_sub", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.x", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.x", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.y", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.y", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.z", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.z", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.vx", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.vx", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.vy", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.vy", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.vz", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.vz", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.time", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.time", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.total_bias", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.total_bias", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.clock_bias", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.clock_bias", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}, {"name": "SPS_M.clock_rate", "values": [{"units": "None", "hints": {"range": 1}, "name": "Value", "key": "value", "format": "float"}, {"source": "timestamp", "hints": {"domain": 1}, "name": "Timestamp", "key": "utc", "format": "utc"}], "location": "SPS_M", "key": "SPS_M.clock_rate", "type": "example.telemetry", "children": [], "properites": {"scale": 1}}], "type": "folder", "name": "SPS_M", "key": "SPS_M", "location": "TLM_db"}]}
+{
+ "name": "TLM_db", 
+ "key": "TLM_db", 
+ "children": [
+  {
+   "children": [
+    {
+     "name": "Example_M.packet_header.Pri.StreamId.packet_version_number", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.Pri.StreamId.packet_version_number", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.Pri.StreamId.packet_type", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.Pri.StreamId.packet_type", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.Pri.StreamId.secondary_header_present", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.Pri.StreamId.secondary_header_present", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.Pri.StreamId.apid", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.Pri.StreamId.apid", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.Pri.Sequence.sequence_flags", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.Pri.Sequence.sequence_flags", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.Pri.Sequence.sequence_count", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.Pri.Sequence.sequence_count", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.Pri.Length", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.Pri.Length", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[0]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[0]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[1]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[1]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[2]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[2]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[3]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[3]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[4]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[4]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[5]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[5]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[6]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[6]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.packet_header.s_time[7]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.packet_header.s_time[7]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.time_ws.week_hw", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.time_ws.week_hw", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.time_ws.sec_hw", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.time_ws.sec_hw", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.time_sub", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.time_sub", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_a", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_a", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_b", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_b", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_c[0]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_c[0]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_c[1]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_c[1]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_c[2]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_c[2]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_c[3]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_c[3]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_c[4]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_c[4]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.temp_d", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.temp_d", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "Example_M.hello", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "Example_M", 
+     "key": "Example_M.hello", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }
+   ], 
+   "type": "folder", 
+   "name": "Example_M", 
+   "key": "Example_M", 
+   "location": "TLM_db"
+  }, 
+  {
+   "children": [
+    {
+     "name": "SPS_M.packet_header.Pri.StreamId.packet_version_number", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.Pri.StreamId.packet_version_number", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.Pri.StreamId.packet_type", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.Pri.StreamId.packet_type", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.Pri.StreamId.secondary_header_present", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.Pri.StreamId.secondary_header_present", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.Pri.StreamId.apid", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.Pri.StreamId.apid", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.Pri.Sequence.sequence_flags", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.Pri.Sequence.sequence_flags", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.Pri.Sequence.sequence_count", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.Pri.Sequence.sequence_count", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.Pri.Length", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.Pri.Length", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[0]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[0]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[1]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[1]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[2]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[2]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[3]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[3]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[4]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[4]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[5]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[5]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[6]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[6]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.packet_header.s_time[7]", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.packet_header.s_time[7]", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.time_ws.week_hw", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.time_ws.week_hw", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.time_ws.sec_hw", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.time_ws.sec_hw", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.time_sub", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "integer"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.time_sub", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.x", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.x", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1,
+      "limits":{"rh":2, "rl":-2, "yh":1, "yl":-1}
+     }
+    }, 
+    {
+     "name": "SPS_M.y", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.y", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.z", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.z", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.vx", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.vx", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.vy", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.vy", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.vz", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.vz", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.time", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.time", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.total_bias", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.total_bias", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.clock_bias", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.clock_bias", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }, 
+    {
+     "name": "SPS_M.clock_rate", 
+     "values": [
+      {
+       "units": "None", 
+       "hints": {
+        "range": 1
+       }, 
+       "name": "Value", 
+       "key": "value", 
+       "format": "float"
+      }, 
+      {
+       "source": "timestamp", 
+       "hints": {
+        "domain": 1
+       }, 
+       "name": "Timestamp", 
+       "key": "utc", 
+       "format": "utc"
+      }
+     ], 
+     "location": "SPS_M", 
+     "key": "SPS_M.clock_rate", 
+     "type": "example.telemetry", 
+     "children": [], 
+     "properites": {
+      "scale": 1
+     }
+    }
+   ], 
+   "type": "folder", 
+   "name": "SPS_M", 
+   "key": "SPS_M", 
+   "location": "TLM_db"
+  }
+ ]
+}
