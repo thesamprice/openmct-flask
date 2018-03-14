@@ -161,6 +161,9 @@ if not os.path.exists(json_tlm_file) or args.regen_tlmdb:
         json.dump(tlm_db,fp,indent=1)
     print "Tlm DB created from python rdls"
 
+#Generate the file loggers
+tlm_loggers = tlm_dictonary.GetOpenMCTTlmLoggers(driver.tlms)
+
 running = False
 from tlm_dictonary import CTypeToDict
 
@@ -174,6 +177,7 @@ def background_thread():
     count = 0
 
     print 'Grabbing packets'
+    logging_dest = app.config['user_dir'] + '/hist_data/'
     while running:
         for z in driver.GetPacket():
             #print 'Got packet'
@@ -194,6 +198,11 @@ def background_thread():
                             out,
                         namespace='/' , #+ out['name'],
                         broadcast=True)
+
+            #Log out the packet
+            if z['name'] in tlm_loggers:
+                tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
+
 
 
 

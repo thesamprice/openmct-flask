@@ -8,6 +8,51 @@ def GetTlmPackets(module):
             packets.append(member)
     return packets
 
+
+def GetOpenMCTTlmLoggers(module):
+    def GetLogger(pkt):
+        fmt = """
+def Log_{PktName}({PktName},time,dest='./'):
+    with open(dest + '/{PktName}', 'ab+' ) as fid:
+        data = pack('d', time)
+        fid.write(data)    
+""".format(PktName=pkt[0])
+        typ_dict = {long:'l',
+        int:'i',
+        float:'d',
+        'str':'string'}
+        #TODO this takes up more space than is needed ie int8 is same as int32 ...
+        for f in CType_FlatNames(pkt[1]):
+            if 'string' == typ_dict[f[1]]: #TODO Deal with strings ...
+                #Open file, get position, write text
+                #Open position file and write position 
+                continue
+            
+            fmt += """
+    with open(dest + '/{fname}' , 'ab+') as fid:
+        data = pack('{type}', {fname})
+        fid.write(data)""".format(type=typ_dict[f[1]],fname=f[0])
+
+        return fmt
+    packets = GetTlmPackets(module)
+    pkt = packets[0]
+    logger = """from struct import pack
+"""
+    for pkt in packets:
+        logger +=  GetLogger(pkt)
+
+    #Now we have a bunch of txt of our functions we want
+    code = compile(logger,'LoggerModule','exec')
+    #Compile our logging options into namespace
+    ns = {}    
+    exec(code) in ns
+    #Just grab our functions
+    funcs = {}
+    for pkt in packets:
+        fname = 'Log_' + pkt[0]
+        funcs[ pkt[0]] = ns[fname]
+    
+    return funcs
 def GetOpenMCTTlmDict(module):
     
     top_folder = 'TLM_db'
@@ -29,7 +74,7 @@ def GetOpenMCTTlmDict(module):
                  'location': top_folder,
                  'children':[],
                 };      
-        print pkt[0] 
+
         meas.append(loc)
         for f in CType_FlatNames(pkt[1]):
             print f
@@ -190,16 +235,12 @@ def DictToCType(dictonary,dest):
 
 
 if __name__ == "__main__":
-    import rdl.navi5k_be_64 as navi5k
 
+    #CType_FlatNames
+    import proj_example.rdl.messages as msg
+    tlms = type('tlms',(),{})
+    tlms.Example_M = msg.Example_M()
+    tlms.SPS_M = msg.SPS_M()
 
-    import gnd_tlm.protocols.CFE_CCSDS as CCSDS
-    import rdl.navi5k_be_64 as xnav
-    from gnd_tlm.interfaces import  rawfile
-    import time
-
-    protocol_rcv = CCSDS.CCSDSProtocol()
-    protocol_rcv.SetCCSDSHeader(little_endian=False)
-    protocol_rcv.AddPacketModule(xnav,'', offset=0x240)
-    print GetOpenMCTTlmDict(protocol_rcv.tlms)
+    print GetOpenMCTTlmLoggers(tlms)
         

@@ -4,7 +4,7 @@ import random
 import ctypes
 import rdl.messages as module
 
-def AddArgs(p):
+def AddArgs(arg_parser):
     arg_parser.add_argument('--tlm_delay',  default=.1,type=str, help='Project folder to pull configuration data from')
     return arg_parser
 
