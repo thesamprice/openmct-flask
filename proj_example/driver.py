@@ -5,14 +5,14 @@ import ctypes
 import rdl.messages as module
 
 def AddArgs(arg_parser):
-    arg_parser.add_argument('--tlm_delay',  default=.1,type=str, help='Project folder to pull configuration data from')
+    arg_parser.add_argument('--tlm_delay',  default=.1,type=float, help='Seconds delay between each ')
     return arg_parser
 
 class Driver(object):
     
     running = 1
     def __init__(self,args):
-        self.tlms =  type('tlmdb', (object,), {})
+        self._tlms =  type('tlmdb', (object,), {})
         self.messages = []
         self.loadMessages()
         self.args = args
@@ -28,14 +28,15 @@ class Driver(object):
                 tlm_buff = bytearray(ctypes.sizeof(obj))
                 tlm_obj = obj.from_buffer(tlm_buff)
 
-                setattr(self.tlms, member[0], tlm_obj)
+                setattr(self._tlms, member[0], tlm_obj)
                 self.messages.append({'name':member[0],
                                       'type':member[1],
                                       'buffer':tlm_buff,
                                       'obj':tlm_obj})
 
-    def GetMessagesDb(self):
-        return self.tlms
+    @property
+    def tlms(self):
+        return self._tlms
 
     def GetPacket(self):
         """Gets one packet, decodes it into a python ctype object and returns it.

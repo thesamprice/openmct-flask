@@ -194,12 +194,14 @@ def background_thread():
                     'obj':obj}
             if args.verbose:
                 print count, out['name']
+
+            #Emit out to different channels
             socketio.emit( 'TLM', #'stream',
                             out,
                         namespace='/' , #+ out['name'],
                         broadcast=True)
 
-            #Log out the packet
+            #Log out the packet to a make shift database?
             if z['name'] in tlm_loggers:
                 tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
 
