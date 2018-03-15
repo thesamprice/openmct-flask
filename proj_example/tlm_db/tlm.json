@@ -601,7 +601,8 @@
      "type": "example.telemetry", 
      "children": [], 
      "properites": {
-      "scale": 1
+      "scale": 1,
+      "poly":{"x":[0,1], "y":[90,0.001]}
      }
     }, 
     {
