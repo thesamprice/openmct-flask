@@ -192,6 +192,7 @@ def background_thread():
                     'name':z['name'],
                     'time':z['time'],
                     'obj':obj}
+            
             if args.verbose:
                 print count, out['name']
 
@@ -202,8 +203,8 @@ def background_thread():
                         broadcast=True)
 
             #Log out the packet to a make shift database?
-            if z['name'] in tlm_loggers:
-                tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
+            # if z['name'] in tlm_loggers:
+            #     tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
 
 
 
@@ -212,6 +213,7 @@ if args.NoTlmOut == False:
     thread = Thread(target=background_thread)
     thread.daemon = True
     thread.start()    
+
 if __name__ == "__main__":
     print '*'*20 + "Started thread"
     app.run(debug=False,threaded=True)
