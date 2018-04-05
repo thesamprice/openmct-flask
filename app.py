@@ -1,6 +1,6 @@
 from flask import Flask, render_template,send_from_directory
-from flask.ext.socketio import SocketIO, emit
-#from flask_socketio import SocketIO, emit
+#from flask.ext.socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit
 from flask_restful import Resource, Api
 from flask_cors import CORS, cross_origin
 from flask_bower import Bower
@@ -19,6 +19,10 @@ import base64
 import datetime
 import time
 from time import sleep
+
+import eventlet
+eventlet.monkey_patch()
+
 
 arg_parser = argparse.ArgumentParser(description='python based telemetry and command streamer.',add_help=False)
 arg_parser.add_argument('--ProjectDir',  default='proj_example',type=str, help='Project folder to pull configuration data from')
@@ -193,7 +197,7 @@ def background_thread():
                     'time':z['time'],
                     'obj':obj}
             
-            if args.verbose:
+            if args.verbose or 1:
                 print count, out['name']
 
             #Emit out to different channels
@@ -210,10 +214,11 @@ def background_thread():
 
 
 if args.NoTlmOut == False:
-    thread = Thread(target=background_thread)
-    thread.daemon = True
-    thread.start()    
-
+#    thread = Thread(target=background_thread)
+#    thread.daemon = True
+#    thread.start()    
+    eventlet.spawn(background_thread)
 if __name__ == "__main__":
     print '*'*20 + "Started thread"
-    app.run(debug=False,threaded=True)
+    socketio.run(app,host='127.0.0.1')
+#    app.run(debug=False,threaded=True)
