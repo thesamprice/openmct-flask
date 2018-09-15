@@ -96,7 +96,19 @@ def getData(path):
             data = json.load(fp)
             return jsonify(data)
 
+@app.route('/history/<path:path>' )
+def getHistory(path):
+    start = float(request.args.get('start')) 
+    end   = float(request.args.get('end')  ) 
 
+    tbl_name =path.split('.')[0]
+    col_name =  tlm_sqllite.CNameToSQLName(path)
+    query = 'select rcv_time as timestamp, {col_name} as value from {tbl_name} where ? <= rcv_time and rcv_time <= ?'
+    query = query.format(tbl_name=tbl_name, col_name = col_name)
+    cur = sql_conn.cursor()
+    print cur.execute(query,(start,end))
+    res = cur.fetchall()
+    return jsonify(res)
 @app.route('/pages')
 def getPagesRoot():
     return getData('')
@@ -211,7 +223,8 @@ def background_thread():
             #Log out the packet to a make shift database?
             # if z['name'] in tlm_loggers:
             #     tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
-            sql_loggers[z['name']](z['obj'], sql_cur)
+            sql_loggers[z['name']](z['obj'],rcv_time=int(z['time']*1000), cur=sql_cur)
+
             sql_conn.commit()
             print 'Save db'
 
