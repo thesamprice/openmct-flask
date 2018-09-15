@@ -164,6 +164,12 @@ if not os.path.exists(json_tlm_file) or args.regen_tlmdb:
 #Generate the file loggers
 tlm_loggers = tlm_dictonary.GetOpenMCTTlmLoggers(driver.tlms)
 
+import tlm_sqllite
+sql_conn = tlm_sqllite.CreateDatabase( args.ProjectDir + '/sqlite.db' ,driver.tlms)
+sql_cur = sql_conn.cursor()
+sql_loggers = tlm_sqllite.GetOpenMCTTlmLoggers(driver.tlms)
+
+
 running = False
 from tlm_dictonary import CTypeToDict
 
@@ -205,7 +211,9 @@ def background_thread():
             #Log out the packet to a make shift database?
             # if z['name'] in tlm_loggers:
             #     tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
-
+            sql_loggers[z['name']](z['obj'], sql_cur)
+            sql_conn.commit()
+            print 'Save db'
 
 
 
