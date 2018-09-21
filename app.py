@@ -106,8 +106,9 @@ def getHistory(path):
     query = 'select rcv_time as timestamp, {col_name} as value from {tbl_name} where ? <= rcv_time and rcv_time <= ?'
     query = query.format(tbl_name=tbl_name, col_name = col_name)
     cur = sql_conn.cursor()
-    print cur.execute(query,(start,end))
-    res = cur.fetchall()
+    with sql_lock:
+        print cur.execute(query,(start,end))
+        res = cur.fetchall()
     return jsonify(res)
 @app.route('/pages')
 def getPagesRoot():
@@ -177,6 +178,9 @@ if not os.path.exists(json_tlm_file) or args.regen_tlmdb:
 tlm_loggers = tlm_dictonary.GetOpenMCTTlmLoggers(driver.tlms)
 
 import tlm_sqllite
+from threading import Lock
+sql_lock = Lock()
+
 sql_conn = tlm_sqllite.CreateDatabase( args.ProjectDir + '/sqlite.db' ,driver.tlms)
 sql_cur = sql_conn.cursor()
 sql_loggers = tlm_sqllite.GetOpenMCTTlmLoggers(driver.tlms)
@@ -223,10 +227,11 @@ def background_thread():
             #Log out the packet to a make shift database?
             # if z['name'] in tlm_loggers:
             #     tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
-            sql_loggers[z['name']](z['obj'],rcv_time=int(z['time']*1000), cur=sql_cur)
+            with sql_lock:
+                sql_loggers[z['name']](z['obj'],rcv_time=int(z['time']*1000), cur=sql_cur)
 
-            sql_conn.commit()
-            print 'Save db'
+                sql_conn.commit()
+                print 'Save db'
 
 
 
