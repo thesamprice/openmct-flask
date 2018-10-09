@@ -1,6 +1,12 @@
 # Setup
+```
 pip install flask flask_bower flask-socketio flask_restful flask_caching
 git submodule update --recursive --init
+cd openmct-tutorial
+npm install
+cd ..
+python run.py
+```
 
 # Overview
 This is a basic translater of CCSDS binary packets into python CTypes and then to JSON packets and transmitted via a socket.io server.
