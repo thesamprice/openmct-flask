@@ -21,16 +21,25 @@ def _BuildTblFromStruct(struct, drop=True):
         txt += "DROP TABLE IF EXISTS {name};\n".format(name=name)
     txt = "CREATE TABLE IF NOT EXISTS {name} (\n".format(name=name)
     rows = [ "  rcv_time LONG NOT NULL"]
+    num_cols = 1
     for x in CType_FlatNames(struct):
         cname = x[0]
         cname = CNameToSQLName(cname)
         ttype = x[1]
         ctype = tdict[ttype]
-        rowtxt = "  {cname} {data_type} NOT NULL".format(cname=cname, data_type=ctype)
+        rowtxt = "  {cname} {data_type} ".format(cname=cname, data_type=ctype)
+        if num_cols < 2000:
         rows.append(rowtxt)
+        num_cols += 1
     rowtxt = ',\n'.join(rows)
     txt += rowtxt
     txt += "\n);"
+
+    if num_cols > 2000:
+        print name, num_cols
+        print "Can't have more than 2000 columns, dumping top ones"
+
+
     return txt
 def  _BuildTblInsertFromStruct(struct):
     name = type(struct).__name__
@@ -40,17 +49,22 @@ def  _BuildTblInsertFromStruct(struct):
     cnames = ["rcv_time"]
     qs = ["?"]
     names = ["rcv_time"]
+    num_cols = 1
     for x in CType_FlatNames(struct):
+        if num_cols < 999:
         names.append(x[0])
         cname = x[0]
         cname = CNameToSQLName(cname)
         cnames.append(cname)
         qs.append('?')
+
+        num_cols += 1
+
     txt += '\n(\n        ' + ',\n        '.join(cnames) + '\n)\n'
     txt += '\nvalues(\n  ' + ',\n        '.join(qs) 
 
     txt += '\n);"""\n'
-
+    txt += '    print ' + str(len(qs) ) + ' , ' + str( len(cnames) ) +  '\n'
     txt += '    return cur.execute(query, (' + ',\n        '.join(names) +') )\n\n'
     return txt
 
