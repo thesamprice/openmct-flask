@@ -228,10 +228,11 @@ def background_thread():
             # if z['name'] in tlm_loggers:
             #     tlm_loggers[z['name']](z['obj'], z['time'], logging_dest)
             with sql_lock:
-                sql_loggers[z['name']](z['obj'],rcv_time=int(z['time']*1000), cur=sql_cur)
+                if z['name'] in sql_loggers:
+                    sql_loggers[z['name']](z['obj'],rcv_time=int(z['time']*1000), cur=sql_cur)
 
-                sql_conn.commit()
-                print 'Save db'
+                    sql_conn.commit()
+                    print 'Save db'
 
 
 
