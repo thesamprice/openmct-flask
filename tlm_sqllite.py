@@ -29,7 +29,7 @@ def _BuildTblFromStruct(struct, drop=True):
         ctype = tdict[ttype]
         rowtxt = "  {cname} {data_type} ".format(cname=cname, data_type=ctype)
         if num_cols < 2000:
-        rows.append(rowtxt)
+           rows.append(rowtxt)
         num_cols += 1
     rowtxt = ',\n'.join(rows)
     txt += rowtxt
@@ -52,11 +52,11 @@ def  _BuildTblInsertFromStruct(struct):
     num_cols = 1
     for x in CType_FlatNames(struct):
         if num_cols < 999:
-        names.append(x[0])
-        cname = x[0]
-        cname = CNameToSQLName(cname)
-        cnames.append(cname)
-        qs.append('?')
+            names.append(x[0])
+            cname = x[0]
+            cname = CNameToSQLName(cname)
+            cnames.append(cname)
+            qs.append('?')
 
         num_cols += 1
 
