@@ -53,17 +53,24 @@ def Log_{PktName}({PktName},time,dest='./'):
         funcs[ pkt[0]] = ns[fname]
     
     return funcs
-def GetOpenMCTTlmDict(module):
-    
+def GetDefaultJson():
     top_folder = 'TLM_db'
     output = {'name':top_folder, 
-              'key':top_folder}
+              'key':top_folder,
+              'children':[]}
+    return output
+def GetOpenMCTTlmDict(module, output=None):
+    if output is None:
+        output = GetDefaultJson()
+    top_folder = output['key']
+
     typ_dict = {long:'integer',
                 int:'integer',
                 float:'float',
                 'str':'string'}
+
     packets = GetTlmPackets(module)
-    pkt = packets[0]
+
     meas = []
     for pkt in packets:
         location = 'example.taxonomy:spacecraft' + '.' + pkt[0]
@@ -77,7 +84,6 @@ def GetOpenMCTTlmDict(module):
 
         meas.append(loc)
         for f in CType_FlatNames(pkt[1]):
-            print f
             m = {'key':f[0],
                  'name':f[0],
                  'location':pkt[0],
@@ -109,8 +115,17 @@ def GetOpenMCTTlmDict(module):
                     }
                  ]}
             loc['children'].append(m)
-#            meas.append(m)
-    output['children'] = meas
+
+    for m in meas:
+        key = m['key']
+        key_exists = False
+        found = None
+        for c in output['children']:
+            if c['key'] == key:
+                print 'Key {0} exists!'.format(key)
+                found = c
+        if found is None:
+            output['children'].append(m)
     return output
 def CType_FlatNames(struct,started=False,name=""):
 
@@ -232,15 +247,63 @@ def DictToCType(dictonary,dest):
     return dest
 
 
+def get_packets(module, prefix=''):
+    import inspect, ctypes
+    members = inspect.getmembers(module)
+    class CoreClass():
+        pass
 
+    out = CoreClass();
+    for member in members:
+        obj = member[1]
+        if hasattr(obj, '_tlm_'):
+            packet = {}
+            packet['apid'] = obj._apid_
+            packet['type'] = obj
+            packet['name'] = prefix + member[0]
+            packet['type'] = obj
+            #size_packet_memory(packet, ctypes.sizeof(obj))
+            packet['size'] = ctypes.sizeof(obj)
+            setattr(out, packet['name'], packet['type']())
+
+    return out
 
 if __name__ == "__main__":
-
+    import argparse
     #CType_FlatNames
-    import proj_example.rdl.messages as msg
-    tlms = type('tlms',(),{})
-    tlms.Example_M = msg.Example_M()
-    tlms.SPS_M = msg.SPS_M()
 
-    print GetOpenMCTTlmLoggers(tlms)
-        
+    import inspect
+    import json
+    parser = argparse.ArgumentParser(prog='PROG')
+    parser.add_argument('-p', '--pyRdl')
+    parser.add_argument('-j', '--inJson')
+    parser.add_argument('-o', '--outJson')
+
+    args = parser.parse_args()
+
+    if args.inJson:
+        with open(args.inJson, 'r') as f:
+            tlm_db = json.load(f)
+    else:
+        tlm_db = GetDefaultJson()
+
+    if args.pyRdl:
+        # Python 2
+        print "Loading ", args.pyRdl
+        import imp
+        tlms = imp.load_source('module.name', args.pyRdl)
+        tlms = get_packets(tlms)
+    else:
+        import proj_example.rdl.messages as msg
+        tlms = type('tlms',(),{})
+        tlms.Example_M = msg.Example_M()
+        tlms.SPS_M = msg.SPS_M()
+
+    tlm_db = GetOpenMCTTlmDict(tlms, tlm_db)
+    if args.outJson:
+        with open(args.outJson,'w') as fp:
+            json.dump(tlm_db,fp,indent=1)
+    else:
+        print tlm_db
+
+
