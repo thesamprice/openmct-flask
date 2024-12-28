@@ -3,7 +3,7 @@ from tlm_dictonary import CType_FlatNames,GetTlmPackets
 import sqlite3
 tdict = {int: "INT",
         'str': "TEXT",
-        long:"BIGINT",
+        int:"BIGINT",
         float: "FLOAT"}
 def CNameToSQLName(name):
     name = name.split('.')
@@ -36,8 +36,8 @@ def _BuildTblFromStruct(struct, drop=True):
     txt += "\n);"
 
     if num_cols > 2000:
-        print name, num_cols
-        print "Can't have more than 2000 columns, dumping top ones"
+        print((name, num_cols))
+        print("Can't have more than 2000 columns, dumping top ones")
 
 
     return txt
@@ -64,7 +64,7 @@ def  _BuildTblInsertFromStruct(struct):
     txt += '\nvalues(\n  ' + ',\n        '.join(qs) 
 
     txt += '\n);"""\n'
-    txt += '    print ' + str(len(qs) ) + ' , ' + str( len(cnames) ) +  '\n'
+    txt += '    print (' + str(len(qs) ) + ' , ' + str( len(cnames) ) +  ')\n'
     txt += '    return cur.execute(query, (' + ',\n        '.join(names) +') )\n\n'
     return txt
 
@@ -93,7 +93,7 @@ def GetOpenMCTTlmLoggers(module):
     code = compile(logger,'SQLLoggerModule','exec')
     #Compile our logging options into namespace
     ns = {}    
-    exec(code) in ns
+    exec((code), ns)
     #Just grab our functions
     funcs = {}
     for pkt in packets:
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     tlms.Example_M = msg.Example_M()
     tlms.SPS_M = msg.SPS_M()
 
-    print _BuildTblInsertFromStruct(tlms.Example_M)
-    print GetOpenMCTTlmLoggers(tlms)
+    print((_BuildTblInsertFromStruct(tlms.Example_M)))
+    print((GetOpenMCTTlmLoggers(tlms)))
     CreateDatabase('test.db', tlms)
     

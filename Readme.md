@@ -8,8 +8,19 @@ cd ..
 python run.py
 ```
 
+### Openmct setup
+cd sources/openmct
+```
+pip install nvm  spacy scikit-learn 
+# Maybe need this ???
+# pip spacey
+nvm install 
+
+```
+
+
 # Overview
-This is a basic translater of CCSDS binary packets into python CTypes and then to JSON packets and transmitted via a socket.io server.
+This is a basic translator of CCSDS binary packets into python CTypes and then to JSON packets and transmitted via a socket.io server.
 
 CCSDS packet definitions are described in CTypes.
 

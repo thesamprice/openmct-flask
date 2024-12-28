@@ -1,3 +1,6 @@
 [submodule "openmct-tutorial"]
 	path = openmct-tutorial
 	url = https://github.com/thesamprice/openmct-tutorial.git
+[submodule "sources/openmct"]
+	path = sources/openmct
+	url = git@github.com:nasa/openmct.git

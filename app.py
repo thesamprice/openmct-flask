@@ -1,6 +1,5 @@
 from flask import Flask, render_template,send_from_directory
-from flask.ext.socketio import SocketIO, emit
-#from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit
 from flask_restful import Resource, Api
 from flask_cors import CORS, cross_origin
 from flask_bower import Bower
@@ -46,12 +45,12 @@ socketio = SocketIO(app,logger=args.verbose,engineio_logger=args.verbose) #async
 
 @app.route('/<path:path>')
 def static_file(path):
-    print path, "Static request" , app._static_folder 
+    print(path, "Static request" , app._static_folder) 
     return app.send_static_file(path)
 
 @app.route('/')
 def index():
-    print "Static request" , app._static_folder + '/index.html'
+    print("Static request" , app._static_folder + '/index.html')
     return app.send_static_file('index.html')
 
 @app.route('/db_telemetry')
@@ -61,14 +60,14 @@ def db_telemetry():
     """Requests the current telemetry database"""
     with open(app.config['user_dir'] + '/tlm_db/tlm.json','r') as fid:
         out = json.loads(fid.read())
-    print "DB requested"
+    print("DB requested")
     return jsonify(out)
 
 @app.route('/pages/<path:path>', methods=['POST','PUT'])
 def saveData(path):
-    print request, path
+    print(request, path)
     data = request.json
-    print data
+    print(data)
     #TODO Securify path
     full_path = app.config['user_dir'] + '/pages/' + path
 
@@ -85,7 +84,7 @@ def saveData(path):
 def getData(path):
         #TODO Securify path
     full_path = app.config['user_dir'] + '/pages/' + path
-    print 'Request', full_path
+    print('Request', full_path)
     if os.path.isdir(full_path):
         data = {'type':'dir',
          'name':path.split('/')[-1],
@@ -107,7 +106,7 @@ def getHistory(path):
     query = query.format(tbl_name=tbl_name, col_name = col_name)
     cur = sql_conn.cursor()
     with sql_lock:
-        print cur.execute(query,(start,end))
+        print(cur.execute(query,(start,end)))
         res = cur.fetchall()
     return jsonify(res)
 @app.route('/pages')
@@ -133,7 +132,7 @@ if async_mode is None:
     if async_mode is None:
         async_mode = 'threading'
 
-    print('async_mode is ' + async_mode)
+    print(('async_mode is ' + async_mode))
 
 # monkey patching is necessary because this application uses a background
 # thread
@@ -172,7 +171,7 @@ if not os.path.exists(json_tlm_file) or args.regen_tlmdb:
     with open(app.config['user_dir'] + '/tlm_db/tlm.json','w') as fp:
         tlm_db = tlm_dictonary.GetOpenMCTTlmDict(driver.tlms)
         json.dump(tlm_db,fp,indent=1)
-    print "Tlm DB created from python rdls"
+    print("Tlm DB created from python rdls")
 
 #Generate the file loggers
 tlm_loggers = tlm_dictonary.GetOpenMCTTlmLoggers(driver.tlms)
@@ -198,13 +197,13 @@ def background_thread():
     """Example of how to send server generated events to clients."""
     count = 0
 
-    print 'Grabbing packets'
+    print('Grabbing packets')
     logging_dest = app.config['user_dir'] + '/hist_data/'
     while running:
         for z in driver.GetPacket():
             #print 'Got packet'
             if z== None:
-                print "packet None"
+                print("packet None")
                 continue
     
             count += 1
@@ -216,13 +215,14 @@ def background_thread():
                     'obj':obj}
             
             if args.verbose:
-                print count, out['name']
+                print(count, out['name'])
 
             #Emit out to different channels
             socketio.emit( 'TLM', #'stream',
                             out,
-                        namespace='/' , #+ out['name'],
-                        broadcast=True)
+                        namespace='/'  #+ out['name'],
+            )
+#                        broadcast=True)
 
             #Log out the packet to a make shift database?
             # if z['name'] in tlm_loggers:
@@ -232,7 +232,7 @@ def background_thread():
                     sql_loggers[z['name']](z['obj'],rcv_time=int(z['time']*1000), cur=sql_cur)
 
                     sql_conn.commit()
-                    print 'Save db'
+                    print('Save db')
 
 
 
@@ -242,5 +242,5 @@ if args.NoTlmOut == False:
     thread.start()    
 
 if __name__ == "__main__":
-    print '*'*20 + "Started thread"
+    print('*'*20 + "Started thread")
     app.run(debug=False,threaded=True)

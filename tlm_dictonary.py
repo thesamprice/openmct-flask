@@ -17,12 +17,13 @@ def Log_{PktName}({PktName},time,dest='./'):
         data = pack('d', time)
         fid.write(data)    
 """.format(PktName=pkt[0])
-        typ_dict = {long:'l',
+        typ_dict = {int:'l',
         int:'i',
         float:'d',
         'str':'string'}
         #TODO this takes up more space than is needed ie int8 is same as int32 ...
         for f in CType_FlatNames(pkt[1]):
+            print(f)
             if 'string' == typ_dict[f[1]]: #TODO Deal with strings ...
                 #Open file, get position, write text
                 #Open position file and write position 
@@ -45,7 +46,7 @@ def Log_{PktName}({PktName},time,dest='./'):
     code = compile(logger,'LoggerModule','exec')
     #Compile our logging options into namespace
     ns = {}    
-    exec(code) in ns
+    exec((code), ns)
     #Just grab our functions
     funcs = {}
     for pkt in packets:
@@ -64,7 +65,7 @@ def GetOpenMCTTlmDict(module, output=None):
         output = GetDefaultJson()
     top_folder = output['key']
 
-    typ_dict = {long:'integer',
+    typ_dict = {int:'integer',
                 int:'integer',
                 float:'float',
                 'str':'string'}
@@ -122,7 +123,7 @@ def GetOpenMCTTlmDict(module, output=None):
         found = None
         for c in output['children']:
             if c['key'] == key:
-                print 'Key {0} exists!'.format(key)
+                print('Key {0} exists!'.format(key))
                 found = c
         if found is None:
             output['children'].append(m)
@@ -136,7 +137,7 @@ def CType_FlatNames(struct,started=False,name=""):
         name += struct.__class__.__name__
 
     def get_value(name, value):
-         if (type(value) not in [int, long, float, bool,str]) and not bool(value):
+         if (type(value) not in [int, int, float, bool,str, bytes]) and not bool(value):
              # it's a null pointer
              yield (name, 'pointer',)
          elif hasattr(value, "_length_") and hasattr(value, "_type_"):
@@ -148,7 +149,7 @@ def CType_FlatNames(struct,started=False,name=""):
              # Probably another struct
              for f in CType_FlatNames(value,started=True,name=name):
                  yield f
-         elif (type(value) == str):
+         elif (type(value) == str or type(value) ==  bytes):
              yield (name, 'str',)
          else:
              yield (name,type(value),)
@@ -176,7 +177,7 @@ def CTypeToDict(struct):
     result = {}
     #print struct
     def get_value(value):
-         if (type(value) not in [int, long, float, bool]) and not bool(value):
+         if (type(value) not in [int, int, float, bool]) and not bool(value):
              # it's a null pointer
              value = None
          elif hasattr(value, "_length_") and hasattr(value, "_type_"):
@@ -209,7 +210,7 @@ def DictToCType(dictonary,dest):
     #print struct
     def set_value(src,dest):
         value = src
-        if (type(dest) not in [int, long, float, bool,str]) and not bool(dest):
+        if (type(dest) not in [int, int, float, bool,str]) and not bool(dest):
             # it's a null pointer
             value = None
         elif hasattr(dest, "_length_") and hasattr(dest, "_type_"):
@@ -238,12 +239,12 @@ def DictToCType(dictonary,dest):
 
              setattr(dest,name,v_out)
          except AttributeError:
-             print "Missing",name
+             print("Missing",name)
          except TypeError:
              k = type(getattr(dest,name))
              setattr(dest,name,k(value))
          except :
-             print  name, value, type(value)
+             print(name, value, type(value))
     return dest
 
 
@@ -289,7 +290,7 @@ if __name__ == "__main__":
 
     if args.pyRdl:
         # Python 2
-        print "Loading ", args.pyRdl
+        print("Loading ", args.pyRdl)
         import imp
         tlms = imp.load_source('module.name', args.pyRdl)
         tlms = get_packets(tlms)
@@ -304,6 +305,6 @@ if __name__ == "__main__":
         with open(args.outJson,'w') as fp:
             json.dump(tlm_db,fp,indent=1)
     else:
-        print tlm_db
+        print(tlm_db)
 
 
